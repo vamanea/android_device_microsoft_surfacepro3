@@ -7,3 +7,24 @@ on early-init
 on fs && property:ro.boot.external=*
     mkdir /mnt/vendor/boot
 
+service nativebridge /system/bin/enable_nativebridge
+    class main
+    disabled
+    oneshot
+    seclabel u:r:zygote:s0
+
+service logcat /system/bin/logcat -b all -v threadtime -f /data/log.txt
+    disabled
+    class debug
+
+service ctrl-alt-del /system/bin/input keyevent --longpress POWER
+    disabled
+    oneshot
+    keycodes 97 100 111
+    seclabel u:r:init:s0
+
+on property:persist.sys.nativebridge=1
+    start nativebridge
+
+on property:persist.sys.nativebridge=0
+    stop nativebridge

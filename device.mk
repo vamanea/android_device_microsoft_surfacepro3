@@ -148,6 +148,10 @@ PRODUCT_COPY_FILES += \
     $(foreach f,$(wildcard $(LOCAL_PATH)/init.d/*),$(f):$(subst $(LOCAL_PATH),system/etc/,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/keylayout/*),$(f):$(subst $(LOCAL_PATH),system/vendor/usr/,$(f)))
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
+PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
+
+
 # Include well known keys for verification
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/recovery/lambdadroid \
@@ -166,3 +170,4 @@ $(call inherit-product-if-exists,external/bluetooth/blue/android/Android.mk)
 
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
+$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
