@@ -383,7 +383,6 @@ function do_bootcomplete()
 			alsa_amixer -c $c set Master 100%
 			alsa_amixer -c $c set Headphone on
 			alsa_amixer -c $c set Headphone 100%
-			alsa_amixer -c $c set Speaker 80%
 			alsa_amixer -c $c set Capture 70%
 			alsa_amixer -c $c set Capture cap
 			alsa_amixer -c $c set PCM 100 unmute
