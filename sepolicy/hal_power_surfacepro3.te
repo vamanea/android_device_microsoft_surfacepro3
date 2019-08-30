@@ -7,4 +7,3 @@ init_daemon_domain(hal_power_surfacepro3)
 type sysfs_power_runtime, fs_type, sysfs_type;
 allow hal_power_surfacepro3 sysfs_power_runtime:file w_file_perms;
 allow hal_power_surfacepro3 sysfs_devices_system_cpu:file w_file_perms;
-allow hal_power_surfacepro3 sysfs_power_runtime:file w_file_perms;
