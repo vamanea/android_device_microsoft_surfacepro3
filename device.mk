@@ -94,9 +94,14 @@ PRODUCT_PACKAGES += \
     libmfx_omx_components_hw \
     libmfxhw32
 
-# Power
+# power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service.surfacepro3
+
+# Memtrack
+PRODUCT_PACKAGES += memtrack.default \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -147,10 +152,6 @@ PRODUCT_COPY_FILES += \
     $(foreach f,$(wildcard $(LOCAL_PATH)/alsa/*),$(f):$(subst $(LOCAL_PATH),system/etc,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/init.d/*),$(f):$(subst $(LOCAL_PATH),system/etc/,$(f))) \
     $(foreach f,$(wildcard $(LOCAL_PATH)/keylayout/*),$(f):$(subst $(LOCAL_PATH),system/vendor/usr/,$(f)))
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.zygote=zygote64_32
-PRODUCT_COPY_FILES += system/core/rootdir/init.zygote64_32.rc:root/init.zygote64_32.rc
-
 
 # Include well known keys for verification
 PRODUCT_EXTRA_RECOVERY_KEYS += \
