@@ -19,7 +19,7 @@
     </project>
 
     <project name="linux-me176c" path="kernel/x80power" remote="me176c" revision="android-4.19" groups="me176c,twrp" />
-    <project name="kernel_common" path="kernel/surface3" remote="surfacepro3" revision="surface-4.19" groups="surfacepro3,twrp" />
+    <project name="kernel_common" path="kernel/surface3" remote="surfacepro3" revision="surface-5.2" groups="surfacepro3,twrp" />
 
     <!-- Firmware -->
     <project name="kernel/git/firmware/linux-firmware.git" path="device/microsoft/surfacepro3/firmware/linux" remote="kernel" revision="7d2c913dcd1be083350d97a8cb1eba24cfacbc8a" />
