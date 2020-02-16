@@ -89,10 +89,18 @@ PRODUCT_PACKAGES += \
     media_codecs.xml \
     media_profiles_V1_0.xml \
     i965_drv_video \
-    libstagefrighthw \
+    libffmpeg_omx \
+    libffmpeg_extractor \
+    libffmpeg_utils \
     libmfx_omx_core \
     libmfx_omx_components_hw \
     libmfxhw32
+# libstagefrighthw is not selected, but the intel omx plugin can be used
+# manually through the below property
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.hwaccel=1 \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # power
 PRODUCT_PACKAGES += \
