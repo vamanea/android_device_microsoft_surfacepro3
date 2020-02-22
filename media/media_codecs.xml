@@ -46,6 +46,7 @@
         </MediaCodec>
     </Encoders>
 
+    <Include href="media_codecs_ffmpeg.xml" />
     <!-- Software codecs -->
     <Include href="media_codecs_google_audio.xml" />
     <Include href="media_codecs_google_video.xml" />
