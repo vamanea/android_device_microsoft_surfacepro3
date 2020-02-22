@@ -6,11 +6,14 @@
     <remote name="intel" fetch="https://github.com/intel/" />
     <remote name="wireguard" fetch="https://git.zx2c4.com" />
     <remote name="cm" fetch="https://github.com/CyanogenMod/" />
-    <remote name="celadon" fetch="https://github.com/projectceladon/" /> 
+    <remote name="celadon" fetch="https://github.com/projectceladon/" />
+    <remote name="maurossi" fetch="https://github.com/maurossi" />
+    <remote name="BR-x86" fetch="https://github.com/BlissRoms-x86" revision="p9.0-x86" />
 
     <remove-project name="LineageOS/android_hardware_broadcom_libbt" />
     <remove-project name="LineageOS/android_hardware_broadcom_nfc" />
     <remove-project name="LineageOS/android_hardware_broadcom_wlan" />
+    <remove-project name="LineageOS/android_external_libavc" />
 
     <!-- Device repositories -->
     <project name="android_device_microsoft_surfacepro3" path="device/microsoft/surfacepro3" remote="surfacepro3" groups="me176c,twrp">
@@ -19,10 +22,10 @@
     </project>
 
     <project name="linux-me176c" path="kernel/x80power" remote="me176c" revision="android-4.19" groups="me176c,twrp" />
-    <project name="kernel_common" path="kernel/surface3" remote="surfacepro3" revision="surface-5.2" groups="surfacepro3,twrp" />
+    <project name="kernel_common" path="kernel/surface3" remote="surfacepro3" revision="surface_5.4" groups="surfacepro3,twrp" />
 
     <!-- Firmware -->
-    <project name="kernel/git/firmware/linux-firmware.git" path="device/microsoft/surfacepro3/firmware/linux" remote="kernel" revision="7d2c913dcd1be083350d97a8cb1eba24cfacbc8a" />
+    <project name="kernel/git/firmware/linux-firmware.git" path="device/microsoft/surfacepro3/firmware/linux" remote="kernel" revision="eefb5f7410150c00d0ab5c41c5d817ae9bf449b3" />
     <project name="Intel-Linux-Processor-Microcode-Data-Files" path="device/microsoft/surfacepro3/firmware/microcode" remote="intel" revision="refs/tags/microcode-20190514a" />
 
     <!-- Graphics -->
@@ -37,10 +40,15 @@
     <project name="android_hardware_thermald" path="hardware/me176c/thermald" remote="me176c" groups="me176c" />
 
     <!-- Hardware video acceleration -->
-    <project name="android_hardware_libva" path="hardware/me176c/libva" remote="me176c" groups="me176c" />
+    <project name="libva" path="hardware/me176c/libva" remote="intel" revision="refs/tags/2.4.1" groups="me176c" />
     <project name="android_hardware_intel-vaapi-driver" path="hardware/me176c/intel-vaapi-driver" remote="me176c" groups="me176c" />
     <project name="android_hardware_mediasdk" path="hardware/me176c/mediasdk" remote="me176c" groups="me176c" />
     <project name="android_hardware_mediasdk-omx" path="hardware/me176c/mediasdk-omx" remote="me176c" groups="me176c" />
+    <project path="external/ffmpeg" name="external_ffmpeg" remote="maurossi" revision="pie-x86" />
+    <project path="external/libavc" name="platform/external/libavc" remote="aosp"/>
+    <!--<project path="external/libdrm" name="platform_external_libdrm" remote="BR-x86" revision="2.4.99-ma-p" />-->
+    <project path="external/s2tc" name="platform_external_s2tc" remote="BR-x86" revision="p9.0" />
+    <project path="external/stagefright-plugins" name="platform/external/stagefright-plugins" remote="x86" revision="pie-x86" />
 
     <!-- ARM native bridge / DRM from ChromeOS (not built by default) -->
     <project name="android_vendor_google_chromeos-x86" path="vendor/google/chromeos-x86" remote="me176c" revision="pie-x86" />
@@ -54,4 +62,6 @@
 
     <!-- bluetooth -->
     <project name="vendor-hardware-interfaces.git" path="vendor/intel" remote="celadon" groups="me176c" revision="5661cdad329b92dcf81e3b825a7a02325b24ea1d" />
+
+    <project name="vendor_x86" path="vendor/x86" remote="BR-x86" revision="p9.0-11.12" />
 </manifest>
